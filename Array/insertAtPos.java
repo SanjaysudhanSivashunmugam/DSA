@@ -1,5 +1,5 @@
 import java.util.*;
-public class insertAtPos{
+public class InsertAtPos{
     public static void main(String args[]){
         Scanner Sc = new Scanner(System.in);
         int arr[] = new int[6];

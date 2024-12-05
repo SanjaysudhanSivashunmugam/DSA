@@ -1,6 +1,6 @@
 import java.util.Arrays;
 
-public class deleteAtPos {
+public class DeleteAtPos {
     public static void main(String args[]){
         int arr[] = {1, 2, 3, 4, 5};
         int pos = 2;
