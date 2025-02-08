@@ -79,6 +79,21 @@ class LinkedList {
         
         prev.next = temp.next;
     }
+    
+    void reverse() {
+       Node curr = head;
+       Node next = null;
+       Node prev = null;
+       
+       while(curr != null) {
+           next = curr.next;
+           curr.next = prev;
+           prev = curr;
+           curr = next;
+       }
+       
+       head = prev;
+    }
 }
 
 public class Main
@@ -93,6 +108,8 @@ public class Main
 		list.insertAtBeginning(13);
 		list.insertAtBeginning(14);
 		list.deleteAtPos(0);
+		list.print();
+		list.reverse();
 		list.print();
 		
 	}
