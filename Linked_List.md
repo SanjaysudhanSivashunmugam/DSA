@@ -115,3 +115,79 @@ public class Main
 	}
 }
 ```
+
+## Doubly Linked List using Java
+
+```java
+class DoublyLinkedList {
+    Node head;
+    Node tail;
+    
+    class Node {
+        int data;
+        Node next;
+        Node prev;
+        
+        Node(int val) {
+            data = val;
+            next = null;
+            prev = null;
+        }
+    }
+    
+    DoublyLinkedList(){
+        head = null;
+        tail = null;
+    }
+    
+    void insertAtBeginning(int val) {
+        Node nn = new Node(val);
+        if(head == null) {
+            head = nn;
+            tail = nn;
+        }
+        else {
+            head.prev = nn;
+            nn.next = head;
+            head = nn;
+        }
+    }
+    
+    void print() {
+        Node temp = head;
+        while(temp != null) {
+            System.out.print(temp.data+" ");
+            temp = temp.next;
+        }
+        System.out.println();
+    }
+    
+    void printReverse() {
+        Node temp = tail;
+        while(temp != null) {
+            System.out.print(temp.data+" ");
+            temp = temp.prev;
+        }
+        System.out.println();
+    }
+    
+    void insertAtPos(int pos,int val) {
+        
+    }
+}
+
+public class Main
+{
+	public static void main(String[] args) {
+		DoublyLinkedList list = new DoublyLinkedList();
+		list.insertAtBeginning(10);
+		list.insertAtBeginning(11);
+		list.insertAtBeginning(12);
+		list.insertAtBeginning(13);
+		list.insertAtBeginning(14);
+		list.print();
+		list.printReverse();
+	}
+}
+
+```
