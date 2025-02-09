@@ -50,3 +50,66 @@ public class Main
 	}
 }
 ```
+
+## Stack using Linked List
+
+```java
+class Stack {
+    Node top;
+    
+    class Node {
+        int data;
+        Node next;
+        
+        Node(int val) {
+            data = val;
+            next = null;
+        } 
+    }
+    Stack() {
+        top = null;
+    }
+    
+    void push(int val) {
+        Node nn = new Node(val);
+        if(top == null) {
+            top = nn;
+        }
+        else {
+            nn.next = top;
+            top = nn;
+        }
+    }
+    
+    int pop() {
+        int temp = top.data;
+        top = top.next;
+        return temp;
+    }
+    
+    int peek() {
+        return top.data;
+    }
+    
+    boolean isEmpty() {
+        return top == null;
+    }
+    
+}
+public class Main
+{
+	public static void main(String[] args) {
+		Stack st = new Stack();
+		System.out.println(st.isEmpty());
+		st.push(10);
+		st.push(11);
+		st.push(12);
+		st.push(13);
+		st.push(14);
+		System.out.println(st.peek());
+		st.pop();
+		System.out.println(st.peek());
+		System.out.println(st.isEmpty());
+	}
+}
+```
