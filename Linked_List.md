@@ -238,3 +238,110 @@ public class Main
 }
 
 ```
+
+## Circular LinkedList using Class
+
+```java
+class CircularLinkedList {
+    Node last;
+    
+    class Node {
+        int data;
+        Node next;
+        
+        Node(int val) {
+            data = val;
+            next = null;
+        }
+    }
+    
+    CircularLinkedList() {
+        last = null;
+    }
+    
+    void insertAtBeginning(int val) {
+        Node nn = new Node(val);
+        if(last == null) {
+            last = nn;
+            nn.next = nn;
+        }
+        else {
+            nn.next = last.next;
+            last.next = nn; 
+        }
+    }
+    
+    void insertAtEnd(int val) {
+        Node nn = new Node(val);
+        if(last == null) {
+            last = nn;
+            nn.next = nn;
+        }
+        else {
+            nn.next = last.next;
+            last.next = nn;
+            last = nn;
+        }
+    }
+    
+    void print() {
+        Node temp = last.next;
+        while(temp != last){
+            System.out.print(temp.data+" ");
+            temp = temp.next;
+        }
+        System.out.print(temp.data+" ");
+        System.out.println();
+    }
+    
+    void deleteAtBeginning() {
+        if(last == null) {
+            System.out.println("List is Empty");
+            return;
+        }
+        if(last.next == last) {
+            last = null;
+        }
+        else{
+            last.next = last.next.next;
+        }
+    }
+    
+    void deleteAtEnd() {
+        if(last == null) {
+            System.out.println("List is Empty");
+            return;
+        }
+        if(last.next == last) {
+            last = null;
+        }
+        Node temp = last.next;
+        while(temp.next != last){
+            temp = temp.next;
+        }
+        temp.next = last.next;
+        last = temp;
+    }
+}
+
+
+public class Main
+{
+	public static void main(String[] args) {
+		CircularLinkedList list = new CircularLinkedList();
+		list.insertAtBeginning(10);
+		list.insertAtBeginning(11);
+		list.insertAtBeginning(12);
+		list.insertAtBeginning(13);
+		list.insertAtBeginning(14);
+		list.insertAtBeginning(15);
+		list.deleteAtBeginning();
+		list.print();
+		list.deleteAtEnd();
+		list.print();
+		list.deleteAtEnd();
+		list.print();
+	}
+}
+
+```
