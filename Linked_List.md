@@ -172,7 +172,51 @@ class DoublyLinkedList {
     }
     
     void insertAtPos(int pos,int val) {
-        
+        if(pos == 0) {
+            insertAtBeginning(val);
+            return;
+        }
+        else{
+            Node nn = new Node(val);
+            Node temp = head;
+            for(int i = 0;i < pos - 1; i++) {
+                temp = temp.next;
+                if(temp == null){
+                    System.out.println("Invalid Position");
+                    return;
+                }
+            }
+            if(temp.next == null){
+                temp.next = nn;
+                nn.prev = temp;
+                tail = nn;
+                return;
+            }
+                nn.next = temp.next;
+                temp.next.prev = nn;
+                temp.next = nn;
+                nn.prev = temp;
+        }
+    }
+    
+    void deleteAtPos(int pos){
+        if(pos == 0){
+            head = head.next;
+            head.prev = null;
+        }
+        else{
+            Node temp = head;
+            for(int i = 0; i < pos; i++){
+                temp = temp.next;
+            }
+            if(temp.next == null){
+                temp.prev.next = null;
+                temp.prev = null;
+                return;
+            }
+            temp.prev.next = temp.next;
+            temp.next.prev = temp.prev; 
+        }
     }
 }
 
@@ -185,8 +229,11 @@ public class Main
 		list.insertAtBeginning(12);
 		list.insertAtBeginning(13);
 		list.insertAtBeginning(14);
+		list.insertAtPos(5,155);
 		list.print();
 		list.printReverse();
+		list.deleteAtPos(5);
+		list.print();
 	}
 }
 
