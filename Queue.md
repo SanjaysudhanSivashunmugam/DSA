@@ -24,10 +24,11 @@ class Queue {
     }
     
     int dequeue() {
-        if(front == -1) {
+        if(front == -1 || front > rear) {
             System.out.println("Queue is empty");
             return 0;
         }
+        
         return arr[front++];
     }
 }
@@ -41,6 +42,9 @@ public class Main
 		qu.enqueue(12);
 		System.out.println(qu.dequeue());
 		System.out.println(qu.dequeue());
+		System.out.println(qu.dequeue());
+		qu.enqueue(13);
+		qu.enqueue(14);
 		System.out.println(qu.dequeue());
 		System.out.println(qu.dequeue());
 	}
