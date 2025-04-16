@@ -1,5 +1,5 @@
 # Armstrong Number
-## `Problem Statement:` Given an integer N, return true it is an Armstrong number otherwise return false. An Amrstrong number is a number that is equal to the sum of its own digits each raised to the power of the number of digits.
+### `Problem Statement:` Given an integer N, return true it is an Armstrong number otherwise return false. An Amrstrong number is a number that is equal to the sum of its own digits each raised to the power of the number of digits.
 
 ```java
 public class Main
