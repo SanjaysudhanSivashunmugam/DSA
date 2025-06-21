@@ -16,19 +16,20 @@ public class Main
 	}
 }
 ```
-`If you want to find the GCD of (a, b), GCD(a, b) = GCD(b, a % b), Repeat this until b = 0. Then, a is the answer.`
+`If you want to find the GCD of (a, b), GCD(a, b) = GCD(a -b, b), Repeat this until a = 0. Then, b is the answer.`
 ```java
 public class Main
 {
 	public static void main(String[] args) {
-		System.out.println(HCF(5,10));
+	     System.out.print(hcf(10,20));
 	}
-	
-	static int HCF(int a, int b) {
-	    if(b == 0) {
-	        return a;
-	    }
-	    return HCF(b,a % b);
+	static int hcf(int a, int b) {
+	   while(a > 0 && b > 0) {
+	       if(a >b) a = a%b;
+	       else b = b % a;
+	   }
+	   if(a == 0) return b;
+	    return a;
 	}
 }
 ```
