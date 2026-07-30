@@ -1,6 +1,6 @@
 class Main {
     public static void main(String[] args) {
-        int n = 4;
+        int n = 5;
         pattern1(n);
         pattern2(n);
         pattern3(n);
@@ -8,6 +8,9 @@ class Main {
         pattern5(n);
         pattern6(n);
         pattern7(n);
+        pattern8(n);
+        pattern9(n);
+        pattern10(n);
     }
 
     public static void pattern1(int n) {
@@ -69,13 +72,53 @@ class Main {
         for(int i = 0; i < n; i++) {
 
             for(int j = 0; j < n - i - 1; j++) {
-                System.out.print("  ");
+                System.out.print(" ");
             }
 
             for(int j = 0; j < 2 * i + 1; j++) {
+                System.out.print("*");
+            }
+
+            System.out.println();
+        }
+    }
+
+    public static void pattern8(int n) {
+        for(int i = 0; i < n; i++) {
+            for(int j = 0; j < i; j++) {
+                System.out.print(" ");
+            }
+
+            for(int j = 0; j < 2 * n - (2 * i + 1); j++) {
+                System.out.print("*");
+            } 
+
+            System.out.println();
+        }
+    }
+
+    public static void pattern9(int n) {
+        for(int i = 0; i < 2 * n - 1; i++) {
+            int star = i;
+            if(i >= n) {
+                star = 2 * n - i - 2;
+            }
+
+            for(int j = 0; j <= star; j++) {
                 System.out.print("* ");
             }
 
+            System.out.println();
+        }
+    }
+
+    public static void pattern10(int n) {
+        for(int i = 0; i < n; i++) {
+           int number = (i % 2 == 0) ? 1 : 0;
+            for(int j = 0; j <= i; j++) {
+                System.out.print(number + " ");
+                number = 1 - number;
+            }
             System.out.println();
         }
     }
