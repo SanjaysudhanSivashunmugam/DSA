@@ -1,4 +1,4 @@
-# Pattern Three
+# Pattern 3
 
 ```
 1 

@@ -1,4 +1,4 @@
-# Pattern one
+# Pattern 1
 
 ```
 *****

@@ -1,3 +1,14 @@
+# Pattern 19
+
+```
+E 
+D E 
+C D E 
+B C D E 
+A B C D E 
+```
+
+```
 class Main {
     public static void main(String[] args) {
         int n = 5;
@@ -11,3 +22,4 @@ class Main {
         }
     }
 }
+```
