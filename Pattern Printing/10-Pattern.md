@@ -1,3 +1,14 @@
+# Pattern 10
+
+```
+1 
+0 1 
+1 0 1 
+0 1 0 1 
+1 0 1 0 1 
+```
+
+```java
 class Main {
     public static void main(String[] args) {
         int n = 5;
@@ -17,3 +28,4 @@ class Main {
         }
     }
 }
+```
