@@ -1,3 +1,9 @@
+# HCF
+```
+Input: 20 40
+output: 20 
+```
+```java
 class Main {
     public static void main(String[] args) {
         int number1 = 20;
@@ -12,3 +18,4 @@ class Main {
         }
     }
 }
+```
