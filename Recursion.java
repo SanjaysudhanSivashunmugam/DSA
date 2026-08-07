@@ -1,13 +1,12 @@
 class Recursion {
     public static void main(String[] args) {
-        print(1);
+        System.out.println(sum(5,0));
     }
 
-    public static void print(int n) {
-        if(n > 3) {
-            return;
+    public static int sum(int n, int s) {
+        if(n < 1) {
+            return s;
         }
-        System.out.println("Hello...");
-        print(n + 1);
+        return sum(n - 1, s + n);
     }
 }
