@@ -1,3 +1,8 @@
+# Insertion  Sort
+```
+0 1 2 3 5 8 9
+```
+```java
 class Sorting {
     public static void main(String[] args) {
         int arr[] = {8, 5, 9, 3, 1, 0, 2};
@@ -22,3 +27,4 @@ class Sorting {
         }
     }
 }
+```
